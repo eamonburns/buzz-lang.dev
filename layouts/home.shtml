@@ -1,0 +1,22 @@
+<extend template="base.shtml">
+<head id="head">
+</head>
+<body id="body">
+	<main>
+		<header>
+			<h1 :text="$page.title"></h1>
+			<p class="description" :text="$page.description"></p>
+			<p class="actions" :loop="$page.custom.get('actions')">
+				<a href="$page.link().suffix($loop.it.get('link'))" class="action-button primary" aria-label="$loop.it.get('text')" :text="$loop.it.get('text')"></a>
+			</p>
+		</header>
+
+		<div class="features" :loop="$page.custom.get('features')">
+			<div class="feature">
+				<h2 :text="$loop.it.get('title')"></h2>
+				<p :text="$loop.it.get('details')"></p>
+			</div>
+		</div>
+		<div :html="$page.content()"></div>
+	</main>
+</body>
