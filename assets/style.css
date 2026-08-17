@@ -198,7 +198,68 @@ kbd {
   /* TODO: */
 }
 
-
+.home {
+  padding: var(--navbar-height) 2rem 0;
+  max-width: var(--homepage-width);
+  margin: 0 auto;
+  display: block;
+}
+.home .hero {
+  text-align: center;
+}
+.home .hero img {
+  max-width: 100%;
+  max-height: 280px;
+  display: block;
+  margin: 3rem auto 1.5rem;
+}
+.home .hero h1 {
+  font-size: 3rem;
+}
+.home .hero h1,
+.home .hero .description,
+.home .hero .actions {
+  margin: 1.8rem auto;
+}
+.home .hero .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.home .hero .description {
+  max-width: 35rem;
+  font-size: 1.6rem;
+  line-height: 1.3;
+  color: var(--c-text-lightest);
+}
+.home .hero .action-button {
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 0.8rem 1.6rem;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 4px;
+  transition: background-color var(--t-color);
+  box-sizing: border-box;
+}
+.home .hero .action-button.primary {
+  color: var(--c-bg);
+  background-color: var(--c-brand);
+  border-color: var(--c-brand);
+}
+.home .hero .action-button.primary:hover {
+  background-color: var(--c-brand-light);
+}
+.home .hero .action-button.secondary {
+  color: var(--c-brand);
+  background-color: var(--c-bg);
+  border-color: var(--c-brand);
+}
+.home .hero .action-button.secondary:hover {
+  color: var(--c-bg);
+  background-color: var(--c-brand-light);
+}
 
 /*
 h1,
