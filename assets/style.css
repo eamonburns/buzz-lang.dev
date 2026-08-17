@@ -1,3 +1,206 @@
+:root {
+  color-scheme: light dark;
+
+  /* Colors */
+  --c-brand: light-dark(#221328, #AB78BF);
+  --c-brand-light: light-dark(#2D1935, #C39FD1);
+  --c-bg: light-dark(#ffffff, #22272e);
+  --c-bg-light: light-dark(#f3f4f5, #2b313a);
+  --c-bg-lighter: light-dark(#eeeeee, #262c34);
+  --c-bg-dark: light-dark(#ebebec, #343b44);
+  --c-bg-darker: light-dark(#e6e6e6, #37404c);
+  --c-bg-navbar: var(--c-bg);
+  --c-bg-sidebar: var(--c-bg);
+  --c-bg-arrow: #cccccc;
+  --c-text: light-dark(#2c3e50, #adbac7);
+  --c-text-accent: var(--c-brand);
+  --c-text-lightest: #6a8bad;
+  --c-text-light: light-dark(#3a5169, #96a7b7);
+  --c-text-lighter: light-dark(#4e6e8e, #8b9eb0);
+  --c-text-lightest: light-dark(#9152aa, #8094a8); /* NOTE: Light version is overriden. Not sure why */
+  --c-text-quote: #999999;
+  --c-border: light-dark(#eaecef, #3e4c5a);
+  --c-border-dark: light-dark(#dfe2e5, #34404c);
+  /* TODO: I might want to define these:
+
+  --c-tip: light-dark(#42b983, #318a62);
+  --c-tip-bg: var(--c-bg-light);
+  --c-tip-title: var(--c-text);
+  --c-tip-text: var(--c-text);
+  --c-tip-text-accent: var(--c-text-accent);
+  --c-warning: #ffc310;
+  --c-warning-bg: #fffae3;
+  --c-warning-bg-light: #fff3ba;
+  --c-warning-bg-lighter: #fff0b0;
+  --c-warning-border-dark: #f7dc91;
+  --c-warning-details-bg: #fff5ca;
+  --c-warning-title: #f1b300;
+  --c-warning-text: #746000;
+  --c-warning-text-accent: #edb100;
+  --c-warning-text-light: #c1971c;
+  --c-warning-text-quote: #ccab49;
+  --c-danger: #f11e37;
+  --c-danger-bg: #ffe0e0;
+  --c-danger-bg-light: #ffcfde;
+  --c-danger-bg-lighter: #ffc9c9;
+  --c-danger-border-dark: #f1abab;
+  --c-danger-details-bg: #ffd4d4;
+  --c-danger-title: #ed1e2c;
+  --c-danger-text: #660000;
+  --c-danger-text-accent: #bd1a1a;
+  --c-danger-text-light: #b5474d;
+  --c-danger-text-quote: #c15b5b;
+  --c-details-bg: #eeeeee;
+  --c-badge-tip: var(--c-tip);
+  --c-badge-warning: #ecc808;
+  --c-badge-warning-text: var(--c-bg);
+  --c-badge-danger: #dc2626;
+  --c-badge-danger-text: var(--c-bg);
+  */
+
+  /* Transition stuff? */
+  --t-color: .3s ease;
+  --t-transform: .3s ease;
+
+  /* Code colors and variables */
+  --code-bg-color: #282c34;
+  --code-hl-bg-color: light-dark(rgba(0, 0, 0, .66), #363b46);
+  --code-ln-color: #9e9e9e;
+  --code-ln-wrapper-width: 3.5rem;
+
+  /* Fonts */
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-family-code: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+
+  /* Navbar */
+  --navbar-height: 3.6rem;
+  --navbar-padding-v: .7rem;
+  --navbar-padding-h: 1.5rem;
+
+  /* Side bar */
+  --sidebar-width: 20rem;
+  --sidebar-width-mobile: calc(var(--sidebar-width) * .82);
+  --content-width: 740px;
+  --homepage-width: 960px
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--c-bg);
+  transition: background-color var(--t-color);
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 1rem;
+  color: var(--c-text);
+}
+
+a {
+  font-weight: 500;
+  color: var(--c-text-accent);
+  text-decoration: none;
+  overflow-wrap: break-word;
+}
+
+p a code {
+  font-weight: 400;
+  color: var(--c-text-accent);
+}
+
+kbd {
+  font-family: var(--font-family-code);
+  color: var(--c-text-lighter);
+}
+
+.navbar {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--navbar-height);
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--c-border);
+  background-color: var(--c-bg-navbar);
+  transition: background-color var(--t-color),border-color var(--t-color);
+}
+
+.navbar {
+  --navbar-line-height: calc( var(--navbar-height) - 2 * var(--navbar-padding-v) );
+  padding: var(--navbar-padding-v) var(--navbar-padding-h);
+  line-height: var(--navbar-line-height);
+}
+
+.navbar .logo {
+  height: var(--navbar-line-height);
+  margin-right: var(--navbar-padding-v);
+  vertical-align: top;
+}
+
+.navbar .site-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--c-text);
+  position: relative;
+}
+
+.navbar .navbar-items-wrapper {
+  display: flex;
+  position: absolute;
+  box-sizing: border-box;
+  top: var(--navbar-padding-v);
+  right: var(--navbar-padding-h);
+  height: var(--navbar-line-height);
+  padding-left: var(--navbar-padding-h);
+  whitespace: nowrap;
+  font-size: .9rem;
+}
+
+@media screen and (max-width: 719px) {
+  /* TODO: */
+}
+
+.navbar-items {
+  display: inline-block;
+}
+
+.navbar-items a {
+  display: inline-block;
+  line-height: 1.4rem;
+  color: inherit;
+}
+
+.navbar-items a:hover,
+.navbar-items a.router-link-active {
+  color: var(--c-text);
+}
+
+.navbar-items .navbar-item {
+  position: relative;
+  display: inline-block;
+  margin-left: 1.5rem;
+  line-height: var(--navbar-line-height);
+}
+.navbar-items .navbar-item:first-child {
+  margin-left: 0;
+}
+
+.navbar-items .navbar-item>a:hover,
+.navbar-items .navbar-item>a.router-link-active {
+  margin-bottom: -2px;
+  border-bottom: 2px solid var(--c-text-accent);
+}
+
+@media (max-width: 719px) {
+  /* TODO: */
+}
+
+
+
+/*
 h1,
 h2,
 h3,
@@ -25,7 +228,9 @@ html {
   justify-content: center;
   background-color: #111;
 }
+*/
 
+/*
 body {
   max-width: 800px;
   overflow-x: scroll;
@@ -33,13 +238,17 @@ body {
   display: flex;
   flex-direction: column;
 }
+*/
 
+/*
 .site-title {
   font-size: 2.5em;
   margin-bottom: 10px;
-  /* text-align: center; */
+  text-align: center;
 }
+*/
 
+/*
 nav {
   display: flex;
   flex-direction: row;
@@ -47,7 +256,9 @@ nav {
   font-size: 1.2em;
   margin-bottom: 20px;
 }
+*/
 
+/*
 pre {
   overflow-x: scroll;
 }
@@ -92,3 +303,4 @@ footer {
 footer hr {
   width: 100%;
 }
+*/

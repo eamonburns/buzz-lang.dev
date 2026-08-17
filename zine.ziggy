@@ -1,6 +1,6 @@
 .zine_version = "0.13.0",
 .site = .simple(.{
-    .title = "Welcome to Zine!",
+    .title = "buzz",
     .host_url = "https://buzz-lang.dev",
     .content_dir_path = "content",
     .layouts_dir_path = "layouts",
@@ -9,4 +9,15 @@
         "Temml.woff2",
     ],
 }),
-
+.custom = {
+    // TODO: Don't hardcode base /0.5.0/
+    "nav-items": [
+        { "text": "Guide", "link": "/0.5.0/guide/" },
+        { "text": "Reference", "link": "/0.5.0/reference/" },
+        { "text": "Github", "link": "https://github.com/buzz-language/buzz", "external": true },
+        { "text": "Discord", "link": "https://discord.gg/VnMdNSdpNV", "external": true },
+        // { "text": "Unreleased", "link": "https://buzz-lang.dev/main/", "external": true },
+        // TODO: Real URL
+        { "text": "Unreleased", "link": "http://localhost/main/", "external": true },
+    ],
+},
