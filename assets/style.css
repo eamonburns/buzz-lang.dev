@@ -261,6 +261,45 @@ kbd {
   background-color: var(--c-brand-light);
 }
 
+.home .features {
+  border-top: 1px solid var(--c-border);
+  transition: border-color var(--t-color);
+  padding: 1.2rem 0;
+  margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: stretch;
+  justify-content: space-between;
+}
+.home .feature {
+  flex-grow: 1;
+  flex-basis: 30%;
+  max-width: 30%;
+}
+.home .feature h2 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  border-bottom: none;
+  padding-bottom: 0;
+  color: var(--c-text-light);
+}
+.home .feature p {
+  color: var(--c-text-lighter);
+}
+
+.home .theme-default-content {
+  padding: 0;
+  margin: 0;
+}
+
+footer {
+  padding: 2.5rem;
+  border-top: 1px solid var(--c-border);
+  text-align: center;
+  color: var(--c-text-lighter);
+  transition: border-color var(--t-color);
+}
 /*
 h1,
 h2,

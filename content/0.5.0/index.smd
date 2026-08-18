@@ -19,6 +19,10 @@
       "details": "Uses MIR, a fast and lightweight JIT compiler",
     },
     {
+      "title": "Unambiguous",
+      "details": "No implicit behavior or unexpected type coercion",
+    },
+    {
       "title": "Small in size and complexity",
       "details": "Does not take much space on your drive or in your mind",
     },
@@ -36,7 +40,7 @@
 //footer: MIT licensed | Copyright © 2021-present Benoit Giannangeli
 ---
 
-```zig buzz
+```kotlin buzz
 import "std";
 
 fun fibonacci(n: int) > void *> int? {

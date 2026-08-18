@@ -61,10 +61,7 @@
 		</header>
 		<super>
 		<footer>
-			<hr>
 			MIT licensed | Copyright © 2021-present Benoit Giannangeli
-			<h5>SITE UNDER CONSTRUCTION</h5>
-			<img src="$site.asset('under-construction.gif').link()" width=90>
 		</footer>
 	</body>
 </html>
