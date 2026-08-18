@@ -299,6 +299,13 @@ footer {
   text-align: center;
   color: var(--c-text-lighter);
   transition: border-color var(--t-color);
+
+  /*
+   * HACK: The following properties are not on the orignal, they are used
+   * because the footer is not nested within main.home
+   */
+  max-width: var(--homepage-width);
+  margin: auto;
 }
 /*
 h1,
