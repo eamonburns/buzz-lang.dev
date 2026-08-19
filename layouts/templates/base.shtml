@@ -21,24 +21,47 @@
 				<img class="logo" src="$site.asset('logo.png').link()" alt="buzz"><span class="site-name can-hide" :text="$site.title"></span>
 			</a>
 			<div class="navbar-items-wrapper">
-				<nav class="navbar-items can-hide" :loop="$site.custom.get('nav-items')">
-					<ctx cond="$loop.it.getOr('external', false)">
-						<ctx :if="$ctx.cond.not()">
-							<div class="navbar-item">
-								<a href="$loop.it.get('link')" aria-label="$loop.it.get('text')" :text="$loop.it.get('text')"></a>
-							</div>
+				<ctx version="$page.custom.get('version')" latest="$site.custom.get('latest_version')">
+					<nav class="navbar-items can-hide">
+						<div class="navbar-item">
+							<a href="$site.page($ctx.version, 'guide').link()" aria-label="Guide">Guide</a>
+						</div>
+						<div class="navbar-item">
+							<a href="$site.page($ctx.version, 'reference').link()" aria-label="Reference">Reference</a>
+						</div>
+						<div class="navbar-item">
+							<a href="https://github.com/buzz-language/buzz" class="external-link" rel="noopener noreferrer" target="_blank" aria-label="Github">
+								Github
+								<span :html="$site.asset('external-link-icon.svg').bytes()"></span>
+								<!-- TODO: external-link-icon-sr-only -->
+							</a>
+						</div>
+						<div class="navbar-item">
+							<a href="https://discord.gg/VnMdNSdpNV" class="external-link" rel="noopener noreferrer" target="_blank" aria-label="Discord">
+								Discord
+								<span :html="$site.asset('external-link-icon.svg').bytes()"></span>
+								<!-- TODO: external-link-icon-sr-only -->
+							</a>
+						</div>
+						<ctx is_latest="$ctx.version.eql($ctx.latest)">
+							<ctx :if="$ctx.is_latest">
+								<div class="navbar-item">
+									<!-- Page is for latest version. Link to unrealeased -->
+									<a href="$site.page('main').link()" aria-label="Unreleased">Unreleased</a>
+								</div>
+							</ctx>
+							<ctx :if="$ctx.is_latest.not()">
+								<div class="navbar-item">
+									<!-- Page is not for latest version. Link to latest version -->
+									<a href="$site.page($ctx.latest).link()"
+									   aria-label="$ctx.latest.prefix('Released (').suffix(')')"
+									   :text="$ctx.latest.prefix('Released (').suffix(')')"
+									></a>
+								</div>
+							</ctx>
 						</ctx>
-						<ctx :if="$ctx.cond">
-							<div class="navbar-item">
-								<a class="external-link" href="$loop.it.get('link')" rel="noopener noreferrer" target="_blank" aria-label="$loop.it.get('text')">
-									<span :text="$loop.it.get('text')"></span>
-									<span :html="$site.asset('external-link-icon.svg').bytes()"></span>
-									<!-- TODO: external-link-icon-sr-only -->
-								</a>
-							</div>
-						</ctx>
-					</ctx>
-				</nav>
+					</nav>
+				</ctx>
 				<!-- TODO:
 
 				<button class="toggle-color-mode-button" title="toggle color mode">
