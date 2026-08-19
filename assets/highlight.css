@@ -94,10 +94,14 @@ code.kotlin {
     background-color: var(--code-constant-bg);
   }
   .string {
-    color: var();
+    color: var(--code-string-fg);
+    background-color: var(--code-string-bg);
   }
   .operator {
     color: var(--code-operator);
+  }
+  .variable {
+    color: var(--code-variable);
   }
   .keyword_function,
   .include,
@@ -105,9 +109,6 @@ code.kotlin {
   .type_builtin {
     color: var(--code-keyword-fg);
     background-color: var(--code-keyword-bg);
-  }
-  .variable {
-    color: var(--code-variable);
   }
   .function,
   .class-name {
