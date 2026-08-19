@@ -307,6 +307,21 @@ footer {
   max-width: var(--homepage-width);
   margin: auto;
 }
+
+pre[class*="language-"] {
+  position: relative;
+  background-color: var(--code-bg-color);
+  border-radius: 6px;
+}
+pre[class*="language-"]:before {
+  content: attr(data-ext);
+  position: absolute;
+  z-index: 3;
+  top: 0.8em;
+  right: 1em;
+  font-size: 0.75rem;
+  color: var(--code-ln-color);
+}
 /*
 h1,
 h2,

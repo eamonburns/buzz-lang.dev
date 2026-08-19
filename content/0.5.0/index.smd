@@ -41,6 +41,7 @@
 ---
 
 ```kotlin buzz
+// main.buzz
 import "std";
 
 fun fibonacci(n: int) > void *> int? {
