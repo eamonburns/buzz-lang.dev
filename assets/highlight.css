@@ -72,66 +72,10 @@
   --code-keyword-bg: var(--purple-bg-color);
   --code-function: var(--orange-text-color);
   --code-variable: var(--color);
-
-  /* dark */
-  /*
-  --base1-color: #c4c0b9;
-  --base2-color: #aaa8a1;
-  --base3-color: #7f8a96;
-  --base4-color: #5c6773;
-  --base5-color: #2d3640;
-  --base6-color: #1b222b;
-  --base7-color: #0f1419;
-  --accent-color: #d2a6ff;
-  --orange-text-color: #ffad66;
-  --orange-text-sec-color: #e6b450;
-  --orange-bg-color: #302a20;
-  --green-text-color: #aad94c;
-  --green-text-sec-color: #c2e675;
-  --green-bg-color: #23301f;
-  --teal-text-color: #73b8ff;
-  --teal-text-sec-color: #8ac7ff;
-  --teal-bg-color: #1f2d3a;
-  --blue-text-color: #59c2ff;
-  --blue-text-sec-color: #86d2ff;
-  --blue-bg-color: #1c2b38;
-  --purple-text-color: #d2a6ff;
-  --purple-text-sec-color: #e1c4ff;
-  --purple-bg-color: #2d2438;
-  --diff-add-color: #aad94c;
-  --diff-change-color: #e6b450;
-  --diff-change-dark-color: #5a4728;
-  --diff-delete-color: #f07178;
-  --diff-renamed-color: #59c2ff;
-  --white-color: #ffffff;
-  --comment-bg-color: #3a2228;
-  --comment-fg-color: #f07178;
-  --inlay-fg-color: #c9a15a;
-  --inlay-bg-color: #2a241a;
-  --foreground-color: #cdcac4;
-  --black-color: #131721;
-  --blue-color: #59c2ff;
-  --orange-color: #ff8f40;
-  --magenta-color: #d2a6ff;
-  --gray-color: #5c6773;
-  --dark-gray-color: #2d3640;
-  --background-color: #0f1419;
-  --dark-background-color: #080a0d;
-  --cyan-color: #73b8ff;
-  --green-color: #aad94c;
-  --red-color: #f07178;
-  --yellow-color: #e6b450;
-  --background-color: #0f1419;
-  --color: #bbb7b1;
-  */
 }
 
 pre[class*="language-"] {
   background-color: var(--background-color);
-  /*
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
-  */
   padding: 10px 5px;
 }
 

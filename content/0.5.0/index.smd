@@ -37,11 +37,9 @@
   ],
 },
 .layout = "home.shtml",
-//footer: MIT licensed | Copyright © 2021-present Benoit Giannangeli
 ---
 
 ```kotlin buzz
-// main.buzz
 import "std";
 
 fun fibonacci(n: int) > void *> int? {
